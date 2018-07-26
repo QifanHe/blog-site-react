@@ -1,4 +1,6 @@
-import { SEARCH_BLUR, SEARCH_FOCUS, CHANGE_LIST } from './actionTypes';
+import { SEARCH_BLUR, SEARCH_FOCUS, CHANGE_LIST,
+        MOUSE_ENTER, MOUSE_LEAVE, CHANGE_PAGE
+        } from './actionTypes';
 import axios from 'axios';
 import { fromJS } from 'immutable'
 
@@ -6,6 +8,7 @@ import { fromJS } from 'immutable'
 const changeList = (data)=>({
   type: CHANGE_LIST,
   data: fromJS(data),
+  totalPage: Math.ceil(data.length/10),
 })
 
 export const searchFocus = ()=>({
@@ -26,3 +29,15 @@ export const getList = ()=>{
       })
   }
 };
+
+export const mouseEnter = () => ({
+  type: MOUSE_ENTER,
+})
+
+export const mouseLeave = () => ({
+  type: MOUSE_LEAVE,
+})
+
+export const changePage = () => ({
+  type: CHANGE_PAGE
+})

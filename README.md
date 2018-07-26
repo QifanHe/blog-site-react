@@ -9,6 +9,8 @@ immutable:(fromJS(), getIn()) create immutable state object, using setter and ge
 redux-immutable: combineReducers from redux immutable (state.get('xxx').get('xx'))
 AJAX: via axios
 redux-thunk: enable functional action(not only object type)
+iconfont: open source icons
 
 thumbnails:
 non-state component.
+the usage of ref (manipulate DOM)
