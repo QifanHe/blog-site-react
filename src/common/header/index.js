@@ -56,7 +56,7 @@ class Header extends Component {
               >
                 <NavSearch
                   className={focused ? 'focused' : ''}
-                  onFocus={handleInputFocus}
+                  onFocus={()=>{handleInputFocus(list)}}
                   onBlur={handleInputBlur}
                 >
                 </NavSearch>
@@ -90,7 +90,7 @@ const getListArea = (
       >
         <SearchInfoTitle>
           Top Search
-          <SearchInfoSwitch onClick={() => {handleChangePage(this.spinIcon)}}>
+          <SearchInfoSwitch onClick={() => {console.log(handleChangePage(this.spinIcon))}}>
             <span>
               <i
                 ref={(icon) => {this.spinIcon = icon}}
@@ -126,8 +126,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      handleInputFocus() {
-        dispatch(actionCreators.getList());
+      handleInputFocus(list) {
+        (list.size === 0) && dispatch(actionCreators.getList());
         dispatch(actionCreators.searchFocus());
       },
       handleInputBlur() {
@@ -140,7 +140,9 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(actionCreators.mouseLeave());
       },
       handleChangePage(spin) {
-        console.log(spin)
+        let originAngle = spin.style.transform.replace(/[^0-9]/ig, '');
+        originAngle = originAngle | 0;
+        spin.style.transform = `rotate(${(parseInt(originAngle)+360)%720}deg)`
         dispatch(actionCreators.changePage());
       },
   }
