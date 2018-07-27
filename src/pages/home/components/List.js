@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
   ListItem,
   ListInfo,
-
+  LoadMore,
 } from '../style'
 
 class List extends Component{
@@ -21,6 +21,7 @@ class List extends Component{
             </ListInfo>
           </ListItem>
         ))}
+        <LoadMore>more</LoadMore>
       </div>
     )
   }

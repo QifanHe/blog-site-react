@@ -111,3 +111,15 @@ export const WriterHeader = styled.div`
     float: right;
   }
 `
+
+export const LoadMore = styled.div`
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #a5a5a5;
+  text-align: center;
+  border-radius: 20px;
+  color: #fff;
+  margin: 30px 0;
+  cursor: pointer;
+`
