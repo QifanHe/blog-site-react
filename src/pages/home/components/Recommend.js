@@ -1,10 +1,27 @@
 import React, { Component } from 'react';
+import {
+  RecommendWrapper,
+  RecommendItem,
+
+} from '../style'
 
 class Recommend extends Component{
 
   render() {
     return (
-      <div>Recommend</div>
+      <RecommendWrapper>
+        <RecommendItem className='sevenDays'>
+          past 7 days
+        </RecommendItem>
+        <RecommendItem className='oneMonth'>
+          past 30 days
+        </RecommendItem>
+        <RecommendItem className='popularSeries'>
+          popular series
+        </RecommendItem>
+
+
+      </RecommendWrapper>
     )
   }
 

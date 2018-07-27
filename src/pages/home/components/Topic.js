@@ -16,6 +16,7 @@ class Topic extends Component{
               <img
                 className='pic'
                 src={item.get('imgUrl')}
+                alt=''
               />
               {item.get('title')};
             </TopicItem>
@@ -30,7 +31,7 @@ class Topic extends Component{
 
 const mapStateToProps = (state)=>{
   return {
-    list: state.get('home').get('topicList'),
+    list: state.getIn(['home', 'topicList']),
   }
 };
 

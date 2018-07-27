@@ -18,13 +18,14 @@ export const HomeLeft = styled.div`
 `
 
 export const HomeRight = styled.div`
-  width: 240px;
+  width: 280;
   float: right;
 `
 export const TopicWrapper = styled.div`
   padding: 20px 0 10px 0;
   overflow: hidden;
   margin-left: -18px;
+  border-bottom: 1px solid #dcdcdc;
 `
 export const TopicItem = styled.div`
   margin-left: 18px;
@@ -45,5 +46,68 @@ export const TopicItem = styled.div`
     height: 32px;
     float: left;
     margin-right: 10px;
+  }
+`
+
+export const ListItem = styled.div`
+  padding: 20px 0;
+  border-bottom: 1px solid #dcdcdc;
+  overflow: hidden;
+  .pic {
+    display: block;
+    float: right;
+    border-radius: 10px;
+    width: 125px;
+    height: 100px;
+  }
+`
+
+export const ListInfo = styled.div`
+  width: 500px;
+  float: left;
+  .title {
+    line-height: 27px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  .dsc {
+    font-size: 13px;
+    line-height: 18px;
+    color: #999;
+  }
+`
+export const RecommendWrapper = styled.div`
+  margin: 30px 0;
+  width: 280px;
+`
+
+export const RecommendItem = styled.div`
+  height: 50px;
+  width: 260px;
+  line-height: 50px;
+  padding-left: 20px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 10px;
+  &.sevenDays {
+    background: #fcbc4f;
+  }
+  &.oneMonth {
+    background: #f69580;
+  }
+  margin-bottom: 18px;
+`
+
+export const WriterWrapper = styled.div`
+  overflow: hidden;
+`
+
+export const WriterHeader = styled.div`
+  .title{
+    float: left;
+  }
+  .spin{
+    float: right;
   }
 `

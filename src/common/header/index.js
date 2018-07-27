@@ -117,9 +117,9 @@ const getListArea = (
 
 const mapStateToProps = (state) => {
   return {
-    focused: state.get('header').get('focused'),
-    list: state.get('header').get('list'),
-    page: state.get('header').get('page'),
+    focused: state.getIn(['header', 'focused']),
+    list: state.getIn(['header', 'list']),
+    page: state.getIn(['header', 'page']),
     mouseIn: state.getIn(['header', 'mouseIn']),
   }
 }
@@ -142,7 +142,7 @@ const mapDispatchToProps = (dispatch) => {
       handleChangePage(spin) {
         let originAngle = spin.style.transform.replace(/[^0-9]/ig, '');
         originAngle = originAngle | 0;
-        spin.style.transform = `rotate(${(parseInt(originAngle)+360)%720}deg)`
+        spin.style.transform = `rotate(${(parseInt(originAngle, 10)+360)%720}deg)`
         dispatch(actionCreators.changePage());
       },
   }
