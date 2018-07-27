@@ -10,6 +10,7 @@ redux-immutable: combineReducers from redux immutable (state.get('xxx').get('xx'
 AJAX: via axios
 redux-thunk: enable functional action(not only object type)
 iconfont: open source icons
+react-router-dom: 
 
 thumbnails:
 non-state component.
